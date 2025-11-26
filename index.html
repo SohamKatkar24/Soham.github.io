@@ -1,6 +1,276 @@
-<!-- Include Tailwind CSS CDN -->
-<script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
-<!-- Set a professional, readable font -->
-<style>body { font-family: 'Inter', sans-serif; }</style>
-<!-- Crucial for responsiveness -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <!-- Crucial for responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Soham Katkar | Full-Stack Developer & AI Enthusiast</title>
+    
+    <!-- Include Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Configuration and Font -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#4f46e5', // Indigo 600
+                        'secondary': '#818cf8', // Indigo 400
+                        'dark-bg': '#0f172a', // Slate 900
+                        'light-text': '#f1f5f9', // Slate 100
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Set the Inter font -->
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-dark-bg text-light-text antialiased">
+
+    <!-- 1. Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-dark-bg/95 backdrop-blur-sm shadow-lg border-b border-primary/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+            <a href="#hero" class="text-xl font-bold text-primary hover:text-secondary transition duration-300">
+                Soham Katkar
+            </a>
+            <div class="flex items-center space-x-4">
+                <!-- Navigation Links -->
+                <a href="#about" class="hidden sm:block text-light-text hover:text-primary transition duration-300">About</a>
+                <a href="#skills" class="hidden sm:block text-light-text hover:text-primary transition duration-300">Skills</a>
+                <a href="#projects" class="hidden sm:block text-light-text hover:text-primary transition duration-300">Projects</a>
+                <a href="#contact" class="hidden sm:block text-light-text hover:text-primary transition duration-300">Contact</a>
+                
+                <!-- Resume CTA Button (Prominent in Nav) -->
+                <a href="/assets/Soham_Katkar.pdf" target="_blank" 
+                   class="px-3 py-1.5 bg-primary text-white text-sm font-semibold rounded-lg shadow-md hover:bg-secondary transition duration-300 transform hover:scale-105">
+                    View Resume
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- 2. Hero Section (Header) -->
+        <section id="hero" class="min-h-screen flex items-center justify-center text-center pt-16">
+            <div class="space-y-6 max-w-4xl">
+                <h1 class="text-6xl sm:text-7xl lg:text-8xl font-extrabold text-white leading-tight">
+                    Hi, I'm <span class="text-primary">Soham Katkar</span>
+                </h1>
+                <p class="text-xl sm:text-2xl text-light-text/80 font-medium">
+                    A Full-Stack Developer & Data Systems Engineer specializing in scalable C++ data models, PostgreSQL, and LLM-driven automation.
+                </p>
+                <p class="text-md text-light-text/60 italic max-w-2xl mx-auto">
+                    "Bridging robust backend engineering with modern AI and cloud-native architectures."
+                </p>
+                <!-- Resume CTA Button (Primary in Hero) -->
+                <div class="pt-4">
+                    <a href="/assets/Soham_Katkar.pdf" target="_blank" 
+                       class="inline-block px-8 py-3 bg-secondary text-dark-bg text-lg font-bold rounded-xl shadow-2xl hover:bg-primary hover:text-white transition duration-300 transform hover:scale-105 ring-4 ring-secondary/50">
+                        Download My CV
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. About Me -->
+        <section id="about" class="py-20 border-t border-primary/30">
+            <h2 class="text-4xl font-bold text-center mb-12 text-white">About Me</h2>
+            <div class="md:flex md:space-x-12 items-center">
+                <!-- Placeholder Image/Photo (stacks on mobile) -->
+                <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+                    <img src="https://placehold.co/250x250/4f46e5/ffffff?text=Soham+Katkar" 
+                         alt="Soham Katkar Professional Photo" class="rounded-full shadow-xl border-4 border-primary/50 w-48 h-48 object-cover">
+                </div>
+                <!-- About Text -->
+                <div class="md:w-2/3 space-y-4 text-light-text/90 text-lg">
+                    <p>
+                        I am currently pursuing a Master's in Information Systems at UMBC, building upon my three years of professional experience as a **Software Engineer at HSBC Technology India**. My expertise lies in high-performance backend systems, specifically optimizing scalable, multi-threaded **C++ data models** and highly efficient **SQL queries** for global payment systems.
+                    </p>
+                    <p>
+                        I specialize in modern DevOps practices, leveraging **Kubernetes, Docker, Jenkins, and GitHub** to maintain robust and secure microservices. My commitment to innovation is highlighted by my experience developing an LLM-based monitoring tool to automate incident summarization, demonstrating a keen interest in applying AI to streamline operations.
+                    </p>
+                    <p>
+                        I am actively seeking a full-time role where I can combine my skills in high-volume transaction systems and full-stack development (React.js, Flask) to drive efficiency and deliver cutting-edge technical solutions.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Skills/Tech Stack -->
+        <section id="skills" class="py-20 border-t border-primary/30">
+            <h2 class="text-4xl font-bold text-center mb-12 text-white">Technical Skills</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+                <!-- Languages & Core -->
+                <div class="p-6 bg-slate-800 rounded-xl text-center shadow-lg hover:shadow-primary/30 transition duration-300 transform hover:scale-105">
+                    <div class="text-4xl mb-2 text-primary">🖥️</div>
+                    <p class="font-semibold text-white">C++, Python, Java</p>
+                    <span class="text-xs text-light-text/60">Core Languages</span>
+                </div>
+                <!-- Databases -->
+                <div class="p-6 bg-slate-800 rounded-xl text-center shadow-lg hover:shadow-primary/30 transition duration-300 transform hover:scale-105">
+                    <div class="text-4xl mb-2 text-primary">🐘</div>
+                    <p class="font-semibold text-white">PostgreSQL & PL/SQL</p>
+                    <span class="text-xs text-light-text/60">Data & Queries</span>
+                </div>
+                <!-- Front-end -->
+                <div class="p-6 bg-slate-800 rounded-xl text-center shadow-lg hover:shadow-primary/30 transition duration-300 transform hover:scale-105">
+                    <div class="text-4xl mb-2 text-primary">⚛️</div>
+                    <p class="font-semibold text-white">React.js & Flask</p>
+                    <span class="text-xs text-light-text/60">Full-Stack Dev</span>
+                </div>
+                <!-- DevOps & Cloud -->
+                <div class="p-6 bg-slate-800 rounded-xl text-center shadow-lg hover:shadow-primary/30 transition duration-300 transform hover:scale-105">
+                    <div class="text-4xl mb-2 text-primary">🐳</div>
+                    <p class="font-semibold text-white">Kubernetes & Docker</p>
+                    <span class="text-xs text-light-text/60">CI/CD & Cloud</span>
+                </div>
+                <!-- AI/NLP/ML -->
+                 <div class="p-6 bg-slate-800 rounded-xl text-center shadow-lg hover:shadow-primary/30 transition duration-300 transform hover:scale-105">
+                    <div class="text-4xl mb-2 text-primary">🧠</div>
+                    <p class="font-semibold text-white">LLMs & Prompt Eng</p>
+                    <span class="text-xs text-light-text/60">AI/NLP Tools (GPT-4/5)</span>
+                </div>
+                <!-- Big Data -->
+                 <div class="p-6 bg-slate-800 rounded-xl text-center shadow-lg hover:shadow-primary/30 transition duration-300 transform hover:scale-105">
+                    <div class="text-4xl mb-2 text-primary">🔥</div>
+                    <p class="font-semibold text-white">Spark & Kafka</p>
+                    <span class="text-xs text-light-text/60">Big Data Processing</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Projects (The Core) -->
+        <section id="projects" class="py-20 border-t border-primary/30">
+            <h2 class="text-4xl font-bold text-center mb-12 text-white">Featured Projects</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+                <!-- Project Card 1: Full-Stack Document Automation App -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden shadow-2xl transition duration-500 hover:shadow-primary/50">
+                    <img src="https://placehold.co/800x450/4f46e5/ffffff?text=Document+Automation+App+UI" alt="Full-Stack Document Automation App" class="w-full h-52 object-cover">
+                    <div class="p-6 space-y-4">
+                        <h3 class="text-2xl font-bold text-primary">Full-Stack Document Automation App</h3>
+                        <p class="text-light-text/80">
+                            A complete web application developed to automate document creation by parsing templates (`.docx`), extracting placeholders, and dynamically generating documents based on conversational user input.
+                        </p>
+                        
+                        <!-- Technology Tags -->
+                        <div class="flex flex-wrap gap-2 text-xs font-semibold">
+                            <span class="px-2 py-1 bg-primary/20 text-primary rounded-full">React.js (Frontend)</span>
+                            <span class="px-2 py-1 bg-primary/20 text-primary rounded-full">Python (Flask REST API)</span>
+                            <span class="px-2 py-1 bg-primary/20 text-primary rounded-full">Vercel & Render (Deployment)</span>
+                            <span class="px-2 py-1 bg-primary/20 text-primary rounded-full">Regex Parsing</span>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex space-x-4 pt-4">
+                            <!-- Placeholder links. Replace with actual Live Demo and Repo links -->
+                            <a href="https://github.com/SohamKatkar/document-automation-demo" target="_blank" class="flex-1 text-center py-2 bg-secondary text-dark-bg font-bold rounded-lg hover:bg-primary hover:text-white transition duration-300">
+                                Live Demo (TBD)
+                            </a>
+                            <a href="https://github.com/SohamKatkar/document-automation-repo" target="_blank" class="flex-1 text-center py-2 bg-slate-700 text-light-text font-bold rounded-lg hover:bg-primary transition duration-300">
+                                View Code (GitHub)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2: Full-Stack Tic-Tac-Toe Game -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden shadow-2xl transition duration-500 hover:shadow-primary/50">
+                    <img src="https://placehold.co/800x450/818cf8/0f172a?text=Tic-Tac-Toe+Game+Screenshot" alt="Full-Stack Tic-Tac-Toe Game" class="w-full h-52 object-cover">
+                    <div class="p-6 space-y-4">
+                        <h3 class="text-2xl font-bold text-primary">Full-Stack Tic-Tac-Toe Game</h3>
+                        <p class="text-light-text/80">
+                            Developed a complete web game application featuring CRUD operations, game persistence, real-time player statistics, and comprehensive game state management using a modern, scalable architecture.
+                        </p>
+                        
+                        <!-- Technology Tags -->
+                        <div class="flex flex-wrap gap-2 text-xs font-semibold">
+                            <span class="px-2 py-1 bg-primary/20 text-primary rounded-full">React.js</span>
+                            <span class="px-2 py-1 bg-primary/20 text-primary rounded-full">Express.js (Node.js API)</span>
+                            <span class="px-2 py-1 bg-primary/20 text-primary rounded-full">PostgreSQL (Database)</span>
+                            <span class="px-2 py-1 bg-primary/20 text-primary rounded-full">Tailwind CSS</span>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex space-x-4 pt-4">
+                            <!-- Placeholder links. Replace with actual Live Demo and Repo links -->
+                            <a href="https://github.com/SohamKatkar/tictactoe-demo" target="_blank" class="flex-1 text-center py-2 bg-secondary text-dark-bg font-bold rounded-lg hover:bg-primary hover:text-white transition duration-300">
+                                Live Demo (TBD)
+                            </a>
+                            <a href="https://github.com/SohamKatkar/tictactoe-repo" target="_blank" class="flex-1 text-center py-2 bg-slate-700 text-light-text font-bold rounded-lg hover:bg-primary transition duration-300">
+                                View Code (GitHub)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <p class="text-center mt-12 text-lg text-light-text/70">
+                Find more projects on my <a href="https://www.linkedin.com/in/soham-katkar/" target="_blank" class="text-primary hover:text-secondary underline font-semibold">GitHub profile</a>.
+            </p>
+        </section>
+        
+        <!-- 6. Contact/Footer -->
+        <section id="contact" class="py-20 border-t border-primary/30">
+             <h2 class="text-4xl font-bold text-center mb-12 text-white">Get In Touch</h2>
+             <div class="text-center space-y-4">
+                <p class="text-xl text-light-text/80">
+                    I'm currently looking for new opportunities. Whether you have a question or just want to say hi, my inbox is always open.
+                </p>
+                
+                <a href="mailto:sohamkatkar2024@gmail.com" 
+                   class="inline-block px-8 py-3 bg-primary text-white text-lg font-bold rounded-xl shadow-lg hover:bg-secondary hover:text-dark-bg transition duration-300 transform hover:scale-105">
+                    Say Hello!
+                </a>
+                <p class="text-light-text/70 pt-2">
+                   Or connect with me on <a href="https://www.linkedin.com/in/soham-katkar/" target="_blank" class="text-primary hover:text-secondary underline font-semibold">LinkedIn</a>.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 border-t border-primary/30 mt-10">
+        <div class="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8 text-center space-y-4">
+            <div class="flex justify-center space-x-6 text-2xl">
+                <!-- Social Links -->
+                <!-- Please update the href below with your actual GitHub link once available -->
+                <a href="https://github.com/YourUsername" target="_blank" class="text-light-text hover:text-primary transition duration-300" aria-label="GitHub Profile">
+                    <!-- GitHub Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.809 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.087-.744.084-.693.084-.693 1.205.086 1.838 1.238 1.838 1.238 1.07 1.835 2.809 1.305 3.493.998.108-.776.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.305-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.003.404 2.292-1.552 3.3-.404 3.3-.404.652 1.652.241 2.871.117 3.176.766.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576c4.767-1.579 8.2-6.085 8.2-11.387c0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/soham-katkar/" target="_blank" class="text-light-text hover:text-primary transition duration-300" aria-label="LinkedIn Profile">
+                    <!-- LinkedIn Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.567-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+            </div>
+            
+            <p class="text-light-text/70">
+                &copy; <span id="current-year"></span> Soham Katkar. Built with Tailwind CSS and GitHub Pages.
+            </p>
+            
+            <!-- Second Resume Link in Footer (Crucial Step 3) -->
+            <a href="/assets/Soham_Katkar.pdf" target="_blank" 
+               class="inline-block text-primary hover:text-secondary underline font-semibold text-sm">
+                Access Resume PDF
+            </a>
+            
+        </div>
+        <script>
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        </script>
+    </footer>
+
+</body>
+</html>
