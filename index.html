@@ -15,10 +15,12 @@
             theme: {
                 extend: {
                     colors: {
-                        'primary': '#4f46e5', // Indigo 600
-                        'secondary': '#818cf8', // Indigo 400
-                        'dark-bg': '#0f172a', // Slate 900
-                        'light-text': '#f1f5f9', // Slate 100
+                        // Netflix-style Palette
+                        'primary': '#E50914',      // Netflix Red
+                        'secondary': '#f1f5f9',    // Light text/Accent (was Indigo 400)
+                        'dark-bg': '#141414',      // Near-Black Background
+                        'card-bg': '#1F1F1F',      // Slightly lighter background for cards
+                        'light-text': '#ffffff',   // White text
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -30,6 +32,17 @@
     <!-- Set the Inter font -->
     <style>
         body { font-family: 'Inter', sans-serif; }
+        /* Style for the horizontal project scrollbar (mimics carousels) */
+        .project-carousel::-webkit-scrollbar {
+            height: 8px;
+        }
+        .project-carousel::-webkit-scrollbar-thumb {
+            background: #E50914; /* Red scrollbar */
+            border-radius: 4px;
+        }
+        .project-carousel::-webkit-scrollbar-track {
+            background: #333;
+        }
     </style>
 </head>
 <body class="bg-dark-bg text-light-text antialiased">
@@ -37,8 +50,8 @@
     <!-- 1. Navigation Bar -->
     <nav class="sticky top-0 z-50 bg-dark-bg/95 backdrop-blur-sm shadow-lg border-b border-primary/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-            <a href="#hero" class="text-xl font-bold text-primary hover:text-secondary transition duration-300">
-                Soham Katkar
+            <a href="#hero" class="text-xl font-bold text-primary hover:opacity-80 transition duration-300">
+                SOHAM KATKAR
             </a>
             <div class="flex items-center space-x-4">
                 <!-- Navigation Links -->
@@ -47,9 +60,9 @@
                 <a href="#projects" class="hidden sm:block text-light-text hover:text-primary transition duration-300">Projects</a>
                 <a href="#contact" class="hidden sm:block text-light-text hover:text-primary transition duration-300">Contact</a>
                 
-                <!-- Resume CTA Button (Prominent in Nav) -->
+                <!-- Resume CTA Button (Prominent, Netflix Red) -->
                 <a href="/assets/Soham_Katkar.pdf" target="_blank" 
-                   class="px-3 py-1.5 bg-primary text-white text-sm font-semibold rounded-lg shadow-md hover:bg-secondary transition duration-300 transform hover:scale-105">
+                   class="px-3 py-1.5 bg-primary text-white text-sm font-semibold rounded-md shadow-md hover:bg-opacity-80 transition duration-300 transform hover:scale-105">
                     View Resume
                 </a>
             </div>
@@ -58,49 +71,50 @@
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <!-- 2. Hero Section (Header) -->
-        <section id="hero" class="min-h-screen flex items-center justify-center text-center pt-16">
-            <div class="space-y-6 max-w-4xl">
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
-                    Hi, I'm <span class="text-primary">Soham Katkar</span>
+        <!-- 2. Hero Section (Header - Large Banner Style) -->
+        <section id="hero" class="min-h-screen flex items-center justify-center text-center pt-16" 
+                 style="background-image: linear-gradient(rgba(20, 20, 20, 0.7), rgba(20, 20, 20, 1)), url('/assets/Profile.png'); background-size: cover; background-position: center top;">
+            <div class="space-y-6 max-w-4xl pt-20 pb-10">
+                <!-- Headline is now larger for visual impact -->
+                <h1 class="text-6xl sm:text-7xl lg:text-8xl font-extrabold text-white leading-tight drop-shadow-lg">
+                    <span class="text-primary">E</span>ngineering <span class="text-primary">T</span>omorrow: <span class="text-secondary">Soham Katkar</span>
                 </h1>
-                <p class="text-xl sm:text-2xl text-light-text/80 font-medium">
+                <p class="text-xl sm:text-2xl text-light-text/80 font-medium drop-shadow-md">
                     A Full-Stack Developer & Data Systems Engineer specializing in scalable C++ data models, PostgreSQL, and LLM-driven automation.
                 </p>
-                <p class="text-md text-light-text/60 italic max-w-2xl mx-auto">
+                <p class="text-md text-light-text/60 italic max-w-2xl mx-auto drop-shadow-sm">
                     "Bridging robust backend engineering with modern AI and cloud-native architectures."
                 </p>
                 <!-- Resume CTA Button (Primary in Hero) -->
                 <div class="pt-4">
                     <a href="/assets/Soham_Katkar.pdf" target="_blank" 
-                       class="inline-block px-8 py-3 bg-secondary text-dark-bg text-lg font-bold rounded-xl shadow-2xl hover:bg-primary hover:text-white transition duration-300 transform hover:scale-105 ring-4 ring-secondary/50">
+                       class="inline-block px-8 py-3 bg-primary text-white text-lg font-bold rounded-md shadow-2xl hover:bg-opacity-80 transition duration-300 transform hover:scale-105 ring-4 ring-primary/50">
                         Download My CV
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- 3. About Me -->
+        <!-- 3. About Me (Simplified, focused on text) -->
         <section id="about" class="py-20 border-t border-primary/30">
             <h2 class="text-4xl font-bold text-center mb-12 text-white">About Me</h2>
-            <div class="md:flex md:space-x-12 items-center">
-                <!-- PHOTO CODE START -->
-                <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
-                    <!-- Path updated to match GitHub asset: /assets/Profile.png -->
+            <div class="md:flex md:space-x-12 items-center bg-card-bg p-8 rounded-xl shadow-xl">
+                <!-- PHOTO CODE START (moved to a smaller container with border) -->
+                <div class="md:w-1/4 mb-8 md:mb-0 flex justify-center flex-shrink-0">
                     <img src="/assets/Profile.png" 
                          alt="Soham Katkar Professional Photo" 
-                         onerror="this.onerror=null; this.src='https://placehold.co/250x250/4f46e5/ffffff?text=Image+Missing';"
-                         class="rounded-full shadow-xl border-4 border-primary/50 w-48 h-48 object-cover">
+                         onerror="this.onerror=null; this.src='https://placehold.co/250x250/E50914/ffffff?text=Soham';"
+                         class="rounded-full shadow-2xl border-4 border-primary/50 w-36 h-36 object-cover transform transition duration-500 hover:scale-110">
                 </div>
                 <!-- PHOTO CODE END -->
                 
                 <!-- About Text -->
-                <div class="md:w-2/3 space-y-4 text-light-text/90 text-lg">
+                <div class="md:w-3/4 space-y-4 text-light-text/90 text-lg">
                     <p>
-                        I am currently pursuing a Master's in Information Systems at UMBC, building upon my three years of professional experience as a Software Engineer at HSBC Technology India. My expertise lies in high-performance backend systems, specifically optimizing scalable, multi-threaded C++ data models and highly efficient SQL queries for global payment systems.
+                        I am currently pursuing a Master's in Information Systems at UMBC, building upon my three years of professional experience as a **Software Engineer at HSBC Technology India**. My expertise lies in high-performance backend systems, specifically optimizing scalable, multi-threaded **C++ data models** and highly efficient **SQL queries** for global payment systems.
                     </p>
                     <p>
-                        I specialize in modern DevOps practices, leveraging Kubernetes, Docker, Jenkins, and GitHub to maintain robust and secure microservices. My commitment to innovation is highlighted by my experience developing an LLM-based monitoring tool to automate incident summarization, demonstrating a keen interest in applying AI to streamline operations.
+                        I specialize in modern DevOps practices, leveraging **Kubernetes, Docker, Jenkins, and GitHub** to maintain robust and secure microservices. My commitment to innovation is highlighted by my experience developing an LLM-based monitoring tool to automate incident summarization, demonstrating a keen interest in applying AI to streamline operations.
                     </p>
                     <p>
                         I am actively seeking a full-time role where I can combine my skills in high-volume transaction systems and full-stack development (React.js, Flask) to drive efficiency and deliver cutting-edge technical solutions.
@@ -109,42 +123,42 @@
             </div>
         </section>
 
-        <!-- 4. Skills/Tech Stack -->
+        <!-- 4. Skills/Tech Stack (As a single, horizontal category) -->
         <section id="skills" class="py-20 border-t border-primary/30">
-            <h2 class="text-4xl font-bold text-center mb-12 text-white">Technical Skills</h2>
+            <h2 class="text-4xl font-bold text-center mb-12 text-white">Core Technologies</h2>
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
                 <!-- Languages & Core -->
-                <div class="p-6 bg-slate-800 rounded-xl text-center shadow-lg hover:shadow-primary/30 transition duration-300 transform hover:scale-105">
+                <div class="p-4 bg-card-bg rounded-xl text-center shadow-lg transition duration-300 transform hover:scale-105 hover:bg-primary/20">
                     <div class="text-4xl mb-2 text-primary">🖥️</div>
                     <p class="font-semibold text-white">C++, Python, Java</p>
                     <span class="text-xs text-light-text/60">Core Languages</span>
                 </div>
                 <!-- Databases -->
-                <div class="p-6 bg-slate-800 rounded-xl text-center shadow-lg hover:shadow-primary/30 transition duration-300 transform hover:scale-105">
+                <div class="p-4 bg-card-bg rounded-xl text-center shadow-lg transition duration-300 transform hover:scale-105 hover:bg-primary/20">
                     <div class="text-4xl mb-2 text-primary">🐘</div>
-                    <p class="font-semibold text-white">PostgreSQL & PL/SQL</p>
+                    <p class="font-semibold text-white">PostgreSQL & Neo4j</p>
                     <span class="text-xs text-light-text/60">Data & Queries</span>
                 </div>
                 <!-- Front-end -->
-                <div class="p-6 bg-slate-800 rounded-xl text-center shadow-lg hover:shadow-primary/30 transition duration-300 transform hover:scale-105">
+                <div class="p-4 bg-card-bg rounded-xl text-center shadow-lg transition duration-300 transform hover:scale-105 hover:bg-primary/20">
                     <div class="text-4xl mb-2 text-primary">⚛️</div>
                     <p class="font-semibold text-white">React.js & Flask</p>
                     <span class="text-xs text-light-text/60">Full-Stack Dev</span>
                 </div>
                 <!-- DevOps & Cloud -->
-                <div class="p-6 bg-slate-800 rounded-xl text-center shadow-lg hover:shadow-primary/30 transition duration-300 transform hover:scale-105">
+                <div class="p-4 bg-card-bg rounded-xl text-center shadow-lg transition duration-300 transform hover:scale-105 hover:bg-primary/20">
                     <div class="text-4xl mb-2 text-primary">🐳</div>
                     <p class="font-semibold text-white">Kubernetes & Docker</p>
                     <span class="text-xs text-light-text/60">CI/CD & Cloud</span>
                 </div>
                 <!-- AI/NLP/ML -->
-                 <div class="p-6 bg-slate-800 rounded-xl text-center shadow-lg hover:shadow-primary/30 transition duration-300 transform hover:scale-105">
+                 <div class="p-4 bg-card-bg rounded-xl text-center shadow-lg transition duration-300 transform hover:scale-105 hover:bg-primary/20">
                     <div class="text-4xl mb-2 text-primary">🧠</div>
-                    <p class="font-semibold text-white">LLMs & Prompt Eng</p>
-                    <span class="text-xs text-light-text/60">AI/NLP Tools (GPT-4/5)</span>
+                    <p class="font-semibold text-white">LLMs & Ollama</p>
+                    <span class="text-xs text-light-text/60">AI/NLP Tools</span>
                 </div>
                 <!-- Big Data -->
-                 <div class="p-6 bg-slate-800 rounded-xl text-center shadow-lg hover:shadow-primary/30 transition duration-300 transform hover:scale-105">
+                 <div class="p-4 bg-card-bg rounded-xl text-center shadow-lg transition duration-300 transform hover:scale-105 hover:bg-primary/20">
                     <div class="text-4xl mb-2 text-primary">🔥</div>
                     <p class="font-semibold text-white">Spark & Kafka</p>
                     <span class="text-xs text-light-text/60">Big Data Processing</span>
@@ -152,104 +166,82 @@
             </div>
         </section>
 
-        <!-- 5. Projects (The Core) -->
+        <!-- 5. Projects (The Core - Netflix Carousels) -->
         <section id="projects" class="py-20 border-t border-primary/30">
-            <h2 class="text-4xl font-bold text-center mb-12 text-white">Featured Projects</h2>
+            <h2 class="text-4xl font-bold mb-6 text-white">Featured Projects</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"> <!-- Now correctly set up for 3 projects -->
+            <!-- Horizontal Scrolling Carousel Container -->
+            <div class="flex space-x-6 pb-4 project-carousel overflow-x-scroll">
 
-                <!-- Project Card 1: AI Study Coach - HackUMBC 2025 (NEW PROJECT) -->
-                <div class="bg-slate-800 rounded-xl overflow-hidden shadow-2xl transition duration-500 hover:shadow-primary/50">
-                    <!-- Placeholder image reflecting the project theme -->
-                    <img src="https://placehold.co/800x450/10b981/ffffff?text=AI+Study+Coach+Dashboard" alt="AI Study Coach Dashboard Screenshot" class="w-full h-52 object-cover">
-                    <div class="p-6 space-y-4">
-                        <h3 class="text-2xl font-bold text-primary">AI Study Coach (HackUMBC)</h3>
-                        <p class="text-light-text/80">
-                            An intelligent academic advisory system leveraging **Neo4j graph database** and **local AI (Ollama)** to analyze student performance patterns, identify peer relationships, and generate personalized study recommendations.
+                <!-- Project Card 1: AI Study Coach - HackUMBC 2025 -->
+                <div class="w-72 flex-shrink-0 bg-card-bg rounded-lg overflow-hidden shadow-2xl transition duration-300 transform hover:scale-105 cursor-pointer">
+                    <!-- Image Area (Poster) -->
+                    <img src="https://placehold.co/700x400/10b981/ffffff?text=AI+Study+Coach" alt="AI Study Coach Dashboard Screenshot" class="w-full h-40 object-cover">
+                    <div class="p-4 space-y-2">
+                        <h3 class="text-xl font-bold text-primary">AI Study Coach (HackUMBC)</h3>
+                        <p class="text-light-text/80 text-sm h-12 overflow-hidden">
+                            Intelligent advisory system using **Neo4j graph database** and **local AI (Ollama)** to generate personalized study recommendations.
                         </p>
-                        
-                        <!-- Technology Tags -->
-                        <div class="flex flex-wrap gap-2 text-xs font-semibold">
-                            <span class="px-2 py-1 bg-primary/20 text-primary rounded-full">Neo4j (Graph DB)</span>
-                            <span class="px-2 py-1 bg-primary/20 text-primary rounded-full">Ollama (Local AI)</span>
-                            <span class="px-2 py-1 bg-primary/20 text-primary rounded-full">React & Flask</span>
-                            <span class="px-2 py-1 bg-primary/20 text-primary rounded-full">AI/NLP</span>
-                        </div>
-
-                        <!-- Action Buttons -->
-                        <div class="flex space-x-4 pt-4">
-                            <!-- View Code only -->
-                            <a href="https://github.com/sohamkatkar24/hackumbc-2025" target="_blank" class="w-full text-center py-2 bg-slate-700 text-light-text font-bold rounded-lg hover:bg-primary transition duration-300">
-                                View Code (GitHub)
+                        <!-- Action Button -->
+                        <div class="pt-2">
+                            <a href="https://github.com/sohamkatkar24/hackumbc-2025" target="_blank" class="w-full inline-block text-center py-2 bg-primary text-white text-sm font-bold rounded-md hover:bg-opacity-80 transition duration-300">
+                                View Code
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project Card 2: Full-Stack Document Automation App (Live Demo Enabled) -->
-                <div class="bg-slate-800 rounded-xl overflow-hidden shadow-2xl transition duration-500 hover:shadow-primary/50">
-                    <!-- Using a visual placeholder URL -->
-                    <img src="https://placehold.co/800x450/4f46e5/ffffff?text=Document+Automation+App+UI" alt="Full-Stack Document Automation App" class="w-full h-52 object-cover">
-                    <div class="p-6 space-y-4">
-                        <h3 class="text-2xl font-bold text-primary">Full-Stack Document Automation App</h3>
-                        <p class="text-light-text/80">
-                            A complete web application developed to automate document creation by parsing templates (`.docx`), extracting placeholders, and dynamically generating documents based on conversational user input.
+                <!-- Project Card 2: Full-Stack Document Automation App -->
+                <div class="w-72 flex-shrink-0 bg-card-bg rounded-lg overflow-hidden shadow-2xl transition duration-300 transform hover:scale-105 cursor-pointer">
+                    <!-- Image Area (Poster) -->
+                    <img src="https://placehold.co/700x400/4f46e5/ffffff?text=Document+App+UI" alt="Full-Stack Document Automation App" class="w-full h-40 object-cover">
+                    <div class="p-4 space-y-2">
+                        <h3 class="text-xl font-bold text-primary">Document Automation App</h3>
+                        <p class="text-light-text/80 text-sm h-12 overflow-hidden">
+                            Automates document creation by parsing Word templates and dynamically generating content based on conversational React/Flask interface.
                         </p>
-                        
-                        <!-- Technology Tags -->
-                        <div class="flex flex-wrap gap-2 text-xs font-semibold">
-                            <span class="px-2 py-1 bg-primary/20 text-primary rounded-full">React.js (Frontend)</span>
-                            <span class="px-2 py-1 bg-primary/20 text-primary rounded-full">Python (Flask REST API)</span>
-                            <span class="px-2 py-1 bg-primary/20 text-primary rounded-full">Vercel & Render (Deployment)</span>
-                            <span class="px-2 py-1 bg-primary/20 text-primary rounded-full">Regex Parsing</span>
-                        </div>
-
                         <!-- Action Buttons -->
-                        <div class="flex space-x-4 pt-4">
-                            <!-- Live Demo Link (target=_top for Canvas compatibility) -->
-                            <a href="https://docu-filler-app.vercel.app/" target="_top" class="flex-1 text-center py-2 bg-secondary text-dark-bg font-bold rounded-lg hover:bg-primary hover:text-white transition duration-300">
+                        <div class="flex space-x-2 pt-2">
+                            <!-- Live Demo Link -->
+                            <a href="https://docu-filler-app.vercel.app/" target="_top" class="flex-1 text-center py-2 bg-secondary text-dark-bg text-sm font-bold rounded-md hover:bg-primary hover:text-white transition duration-300">
                                 Live Demo
                             </a>
-                            <!-- Using the exact repository name: Docu-Filler-App -->
-                            <a href="https://github.com/sohamkatkar24/Docu-Filler-App" target="_blank" class="flex-1 text-center py-2 bg-slate-700 text-light-text font-bold rounded-lg hover:bg-primary transition duration-300">
-                                View Code (GitHub)
+                            <!-- View Code -->
+                            <a href="https://github.com/sohamkatkar24/Docu-Filler-App" target="_blank" class="flex-1 text-center py-2 bg-slate-700 text-light-text text-sm font-bold rounded-md hover:bg-primary transition duration-300">
+                                Code
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project Card 3: Full-Stack Tic-Tac-Toe Game (Live Demo Disabled) -->
-                <div class="bg-slate-800 rounded-xl overflow-hidden shadow-2xl transition duration-500 hover:shadow-primary/50">
-                    <!-- Using a visual placeholder URL -->
-                    <img src="https://placehold.co/800x450/818cf8/0f172a?text=Tic-Tac-Toe+Game+Screenshot" alt="Full-Stack Tic-Tac-Toe Game" class="w-full h-52 object-cover">
-                    <div class="p-6 space-y-4">
-                        <h3 class="text-2xl font-bold text-primary">Full-Stack Tic-Tac-Toe Game</h3>
-                        <p class="text-light-text/80">
-                            Developed a complete web game application featuring CRUD operations, game persistence, real-time player statistics, and comprehensive game state management using a modern, scalable architecture.
+                <!-- Project Card 3: Full-Stack Tic-Tac-Toe Game -->
+                <div class="w-72 flex-shrink-0 bg-card-bg rounded-lg overflow-hidden shadow-2xl transition duration-300 transform hover:scale-105 cursor-pointer">
+                    <!-- Image Area (Poster) -->
+                    <img src="https://placehold.co/700x400/818cf8/0f172a?text=Tic-Tac-Toe+Game" alt="Full-Stack Tic-Tac-Toe Game" class="w-full h-40 object-cover">
+                    <div class="p-4 space-y-2">
+                        <h3 class="text-xl font-bold text-primary">Full-Stack Tic-Tac-Toe Game</h3>
+                        <p class="text-light-text/80 text-sm h-12 overflow-hidden">
+                            Web game featuring CRUD operations, game persistence, and real-time player statistics using a React, Express, and PostgreSQL stack.
                         </p>
-                        
-                        <!-- Technology Tags -->
-                        <div class="flex flex-wrap gap-2 text-xs font-semibold">
-                            <span class="px-2 py-1 bg-primary/20 text-primary rounded-full">React.js</span>
-                            <span class="px-2 py-1 bg-primary/20 text-primary rounded-full">Express.js (Node.js API)</span>
-                            <span class="px-2 py-1 bg-primary/20 text-primary rounded-full">PostgreSQL (Database)</span>
-                            <span class="px-2 py-1 bg-primary/20 text-primary rounded-full">Tailwind CSS</span>
-                        </div>
-
-                        <!-- Action Buttons -->
-                        <div class="flex space-x-4 pt-4">
-                            <!-- View Code only (w-full ensures it stretches across the card) -->
-                            <a href="https://github.com/sohamkatkar24/tic-tac-toe-game" target="_blank" class="w-full text-center py-2 bg-slate-700 text-light-text font-bold rounded-lg hover:bg-primary transition duration-300">
-                                View Code (GitHub)
+                        <!-- Action Button -->
+                        <div class="pt-2">
+                            <a href="https://github.com/sohamkatkar24/tic-tac-toe-game" target="_blank" class="w-full inline-block text-center py-2 bg-primary text-white text-sm font-bold rounded-md hover:bg-opacity-80 transition duration-300">
+                                View Code
                             </a>
                         </div>
                     </div>
+                </div>
+
+                <!-- Add a placeholder to encourage more content -->
+                <div class="w-72 flex-shrink-0 bg-card-bg/50 rounded-lg overflow-hidden shadow-inner transition duration-300 flex items-center justify-center border-2 border-dashed border-gray-600">
+                    <p class="text-gray-500 p-4 text-center">More Projects Coming Soon...</p>
                 </div>
 
             </div>
             
+            <!-- Link for more projects -->
             <p class="text-center mt-12 text-lg text-light-text/70">
-                Find more projects on my <a href="https://github.com/sohamkatkar24" target="_blank" class="text-primary hover:text-secondary underline font-semibold">GitHub profile</a>.
+                Find all my repositories on my <a href="https://github.com/sohamkatkar24" target="_blank" class="text-primary hover:text-secondary underline font-semibold">GitHub profile</a>.
             </p>
         </section>
         
@@ -262,7 +254,7 @@
                 </p>
                 
                 <a href="mailto:sohamkatkar2024@gmail.com" 
-                   class="inline-block px-8 py-3 bg-primary text-white text-lg font-bold rounded-xl shadow-lg hover:bg-secondary hover:text-dark-bg transition duration-300 transform hover:scale-105">
+                   class="inline-block px-8 py-3 bg-primary text-white text-lg font-bold rounded-md shadow-lg hover:bg-opacity-80 transition duration-300 transform hover:scale-105">
                     Say Hello!
                 </a>
                 <p class="text-light-text/70 pt-2">
@@ -273,7 +265,7 @@
 
     </main>
 
-    <footer class="bg-slate-900 border-t border-primary/30 mt-10">
+    <footer class="bg-card-bg border-t border-primary/30 mt-10">
         <div class="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8 text-center space-y-4">
             <div class="flex justify-center space-x-6 text-2xl">
                 <!-- Social Links -->
