@@ -84,11 +84,16 @@
         <section id="about" class="py-20 border-t border-primary/30">
             <h2 class="text-4xl font-bold text-center mb-12 text-white">About Me</h2>
             <div class="md:flex md:space-x-12 items-center">
-                <!-- Placeholder Image/Photo (stacks on mobile) -->
+                <!-- PHOTO CODE START -->
                 <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
-                    <img src="/assets/Profile.png" 
-                         alt="Soham Katkar Professional Photo" class="rounded-full shadow-xl border-4 border-primary/50 w-48 h-48 object-cover">
+                    <!-- Assuming you uploaded your image file named 'profile.jpg' to the 'assets' folder -->
+                    <img src="/assets/profile.jpg" 
+                         alt="Soham Katkar Professional Photo" 
+                         onerror="this.onerror=null; this.src='https://placehold.co/250x250/4f46e5/ffffff?text=Image+Missing';"
+                         class="rounded-full shadow-xl border-4 border-primary/50 w-48 h-48 object-cover">
                 </div>
+                <!-- PHOTO CODE END -->
+                
                 <!-- About Text -->
                 <div class="md:w-2/3 space-y-4 text-light-text/90 text-lg">
                     <p>
@@ -172,11 +177,12 @@
 
                         <!-- Action Buttons -->
                         <div class="flex space-x-4 pt-4">
-                            <!-- Placeholder links. Replace with actual Live Demo and Repo links -->
-                            <a href="https://github.com/SohamKatkar/document-automation-demo" target="_blank" class="flex-1 text-center py-2 bg-secondary text-dark-bg font-bold rounded-lg hover:bg-primary hover:text-white transition duration-300">
-                                Live Demo (TBD)
+                            <!-- 🚨 UPDATE THE LIVE DEMO URL BELOW 🚨 -->
+                            <a href="https://<YOUR_DOCUMENT_DEMO_URL>" target="_blank" class="flex-1 text-center py-2 bg-secondary text-dark-bg font-bold rounded-lg hover:bg-primary hover:text-white transition duration-300">
+                                Live Demo (Link TBD)
                             </a>
-                            <a href="https://github.com/SohamKatkar/document-automation-repo" target="_blank" class="flex-1 text-center py-2 bg-slate-700 text-light-text font-bold rounded-lg hover:bg-primary transition duration-300">
+                            <!-- 💥 FIXED: Using the exact repository name: Docu-Filler-App 💥 -->
+                            <a href="https://github.com/sohamkatkar24/Docu-Filler-App" target="_blank" class="flex-1 text-center py-2 bg-slate-700 text-light-text font-bold rounded-lg hover:bg-primary transition duration-300">
                                 View Code (GitHub)
                             </a>
                         </div>
@@ -202,11 +208,12 @@
 
                         <!-- Action Buttons -->
                         <div class="flex space-x-4 pt-4">
-                            <!-- Placeholder links. Replace with actual Live Demo and Repo links -->
-                            <a href="https://github.com/SohamKatkar/tictactoe-demo" target="_blank" class="flex-1 text-center py-2 bg-secondary text-dark-bg font-bold rounded-lg hover:bg-primary hover:text-white transition duration-300">
-                                Live Demo (TBD)
+                            <!-- 🚨 UPDATE THE LIVE DEMO URL BELOW 🚨 -->
+                            <a href="https://<YOUR_TICTACTOE_DEMO_URL>" target="_blank" class="flex-1 text-center py-2 bg-secondary text-dark-bg font-bold rounded-lg hover:bg-primary hover:text-white transition duration-300">
+                                Live Demo (Link TBD)
                             </a>
-                            <a href="https://github.com/SohamKatkar/tictactoe-repo" target="_blank" class="flex-1 text-center py-2 bg-slate-700 text-light-text font-bold rounded-lg hover:bg-primary transition duration-300">
+                            <!-- 💥 FIXED: Using the exact repository name: tic-tac-toe-game 💥 -->
+                            <a href="https://github.com/sohamkatkar24/tic-tac-toe-game" target="_blank" class="flex-1 text-center py-2 bg-slate-700 text-light-text font-bold rounded-lg hover:bg-primary transition duration-300">
                                 View Code (GitHub)
                             </a>
                         </div>
@@ -216,7 +223,7 @@
             </div>
             
             <p class="text-center mt-12 text-lg text-light-text/70">
-                Find more projects on my <a href="https://www.linkedin.com/in/soham-katkar/" target="_blank" class="text-primary hover:text-secondary underline font-semibold">GitHub profile</a>.
+                Find more projects on my <a href="https://github.com/sohamkatkar24" target="_blank" class="text-primary hover:text-secondary underline font-semibold">GitHub profile</a>.
             </p>
         </section>
         
@@ -244,8 +251,7 @@
         <div class="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8 text-center space-y-4">
             <div class="flex justify-center space-x-6 text-2xl">
                 <!-- Social Links -->
-                <!-- Please update the href below with your actual GitHub link once available -->
-                <a href="https://github.com/YourUsername" target="_blank" class="text-light-text hover:text-primary transition duration-300" aria-label="GitHub Profile">
+                <a href="https://github.com/sohamkatkar24" target="_blank" class="text-light-text hover:text-primary transition duration-300" aria-label="GitHub Profile">
                     <!-- GitHub Icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.809 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.087-.744.084-.693.084-.693 1.205.086 1.838 1.238 1.838 1.238 1.07 1.835 2.809 1.305 3.493.998.108-.776.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.305-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.003.404 2.292-1.552 3.3-.404 3.3-.404.652 1.652.241 2.871.117 3.176.766.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576c4.767-1.579 8.2-6.085 8.2-11.387c0-6.627-5.373-12-12-12z"/></svg>
                 </a>
